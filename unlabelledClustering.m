@@ -14,14 +14,13 @@ newPrototype = kMeans(F32, prototypes);
 
 % While the old prototype does not equal the new one, continue to iterate
 % through K-Means algorithm
-% Print out iteration number
 iteration = 1;
 while ~isequal(prototypes, newPrototype)
-    iteration
-    iteration = iteration + 1;
     oldPrototype = newPrototype;
     newPrototype = kMeans(F32, oldPrototype);
     prototypes = oldPrototype;
+    iteration = iteration + 1;
+    iteration
 end
 
 % Plot original data and final, converged prototypes
@@ -29,6 +28,10 @@ figure
 scatter(F32(1,:), F32(2,:), 30);
 hold on
 scatter(newPrototype(1,:), newPrototype(2,:), 'rx', 'linewidth', 3);
+legend('Unlabelled Data Points', 'Converged Prototype Means', 'Location', 'northwest')
+xlabel('xij(1)')
+ylabel('xij(2)')
+title(sprintf('Converged Protoypes via K-means Algorithm (iteration %d)', iteration))
 
 % Function that represents an iteration of the K-Means algorithm
 % Inputs: 
