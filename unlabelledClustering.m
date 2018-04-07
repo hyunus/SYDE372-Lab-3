@@ -31,7 +31,7 @@ scatter(newPrototype(1,:), newPrototype(2,:), 'rx', 'linewidth', 3);
 legend('Unlabelled Data Points', 'Converged Prototype Means', 'Location', 'northwest')
 xlabel('xij(1)')
 ylabel('xij(2)')
-title(sprintf('Converged Protoypes via K-means Algorithm (iteration %d)', iteration))
+title(sprintf('Converged Protoypes via K-means Algorithm (Iterations: %d)', iteration))
 
 % Function that represents an iteration of the K-Means algorithm
 % Inputs: 
